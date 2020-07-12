@@ -1,0 +1,109 @@
+﻿@page "/facerecognition"
+
+<style>
+    body {
+        background-color: #1c1c1c;
+    }
+
+    h1 {
+        text-align: center;
+        color: #efefef;
+        font-family: 'Lucida Sans Unicode';
+    }
+
+    .summary {
+        text-align: center;
+        color: #efefef;
+        font-family: Georgia;
+        font-size: 1.2em;
+    }
+
+    .btn-group {
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 5px 0;
+        width: 33%;
+    }
+
+    .btn-secondary {
+        border: none;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 12px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+    .live-app {
+        background-color: #1c1c1c;
+        color: #efefef;
+        border: 2px solid #9e9e9e;
+    }
+
+        .live-app:hover {
+            background: linear-gradient(89deg, rgb(133, 247, 152) 0%, rgb(86, 153, 216) 100%);
+        }
+
+    .front-end {
+        background-color: #1c1c1c;
+        color: #efefef;
+        border: 2px solid #9e9e9e;
+    }
+
+        .front-end:hover {
+            background: linear-gradient(89deg, rgb(133, 247, 152) 0%, rgb(86, 153, 216) 100%);
+        }
+
+    .back-end {
+        background-color: #1c1c1c;
+        color: #efefef;
+        border: 2px solid #9e9e9e;
+    }
+
+        .back-end:hover {
+            background: linear-gradient(89deg, rgb(133, 247, 152) 0%, rgb(86, 153, 216) 100%);
+        }
+
+    .example-image {
+        width: 50%;
+        margin-left: 25%;
+        border-style: solid;
+        border-color: black;
+    }
+</style>
+
+<h1>Face Recognition App</h1>
+
+<p class="summary">
+    This was the final project in an online web development course that I took in conjunction with my
+    university courses during the Spring 2020 semester. Both the front and back-end pieces of the
+    application were written from scratch, primarily using Javascript with the React library. The app
+    makes use of Clarifai's facial recognition API to identify a randomly chosen face in a picture
+    submitted through an internet link.
+</p>
+
+<p class="summary">
+    If you'd like to try out the app for yourself, you'll have to register an account. Feel free to use
+    a fake email :)
+</p>
+
+<div class="btn-group">
+    <a href="https://face-recognition-17.herokuapp.com/" class="btn btn-secondary live-app"
+       target="_blank">Live App</a>
+    <a href="https://github.com/jakob-17/face-recognition-fe" class="btn btn-secondary front-end" target="_blank">Front-End Repo</a>
+    <a href="https://github.com/jakob-17/face-recognition-api" class="btn btn-secondary back-end"
+       target="_blank">Back-End Repo</a>
+</div>
+
+<br />
+
+<div class="example-image">
+    <img src="images/face-recognition-ex.jpg" alt="Example Photo" style="width:100%" />
+</div>
+
+@code {
+
+}

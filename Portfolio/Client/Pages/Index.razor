@@ -1,0 +1,196 @@
+﻿@page "/"
+@inject IJSRuntime JSRuntime
+
+<style>
+    body {
+        background-color: #1c1c1c;
+    }
+
+    h1 {
+        text-align: center;
+        color: #efefef;
+        font-family: 'Lucida Sans Unicode';
+    }
+
+    h3 {
+        text-align: left;
+        color: #efefef;
+        font-family: 'Lucida Sans Unicode';
+    }
+
+    h5 {
+        text-align: center;
+        color: #efefef;
+        font-family: Georgia;
+    }
+
+    .grid {
+        overflow: hidden; /*allows floats to the tiles within*/
+    }
+
+    .tile {
+        padding: 1% 5%;
+        float: left;
+        position: relative;
+        width: 33%;
+    }
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        /*border-radius: 5px;*/
+    }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 #efefef;
+        }
+
+    img {
+        border-radius: 5px 5px 0 0;
+    }
+
+    .container {
+        position: relative;
+        padding: 8px;
+    }
+
+    h4 {
+        text-align: center;
+        color: #15546a;
+        font-family: 'Lucida Sans Unicode';
+    }
+
+    p {
+        text-align: center;
+        color: #15546a;
+        font-family: 'Lucida Sans Unicode';
+    }
+
+    .btn-group {
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 5px 0;
+        width: 33%;
+    }
+
+    .btn-secondary {
+        border: none;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 12px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+    .github {
+        background-color: #1c1c1c;
+        color: #efefef;
+        border: 2px solid #2ea44f;
+    }
+
+        .github:hover {
+            background-color: #2ea44f;
+        }
+
+    .linkedin {
+        background-color: #1c1c1c;
+        color: #efefef;
+        border: 2px solid #0077b5;
+    }
+
+        .linkedin:hover {
+            background-color: #0077b5;
+        }
+
+    .email {
+        background-color: #1c1c1c;
+        color: #efefef;
+        border: 2px solid #d93025;
+    }
+
+        .email:hover {
+            background-color: #d93025;
+        }
+</style>
+
+<h3>Jakob Horvath</h3>
+<h1>Computer Science Student at the U of U</h1>
+<h5>Please explore my various projects to see what I've been working on.</h5>
+
+<div class="btn-group">
+    <a href="https://github.com/jakob-17" class="btn btn-secondary github" target="_blank">Github</a>
+    <a href="https://www.linkedin.com/in/jakob-horvath-33202719a/" class="btn btn-secondary linkedin"
+       target="_blank">LinkedIn</a>
+    <a href="" class="btn btn-secondary email" @onclick="CopyEmail">Copy Email</a>
+</div>
+
+<div class="grid">
+    <div class="tile">
+        <a href="facerecognition">
+            <div class="card">
+                <img src="images/face-recognition-app.jpg" alt="Photo 1" style="width:100%" />
+                <div class="container">
+                    <h4><b>Face Recognition App</b></h4>
+                    <p><a href="https://www.udemy.com/course/the-complete-web-developer-zero-to-mastery/"
+                          target="_blank">Udemy web development</a> project.</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="tile">
+        <div class="card">
+            <img src="images/IMG952177.jpg" alt="Photo 2" style="width:100%" />
+            <div class="container">
+                <h4><b>Porject #2</b></h4>
+                <p>A project.</p>
+            </div>
+        </div>
+    </div>
+    <div class="tile">
+        <div class="card">
+            <img src="images/IMG952177.jpg" alt="Photo 3" style="width:100%" />
+            <div class="container">
+                <h4><b>Porject #3</b></h4>
+                <p>A project.</p>
+            </div>
+        </div>
+    </div>
+    <div class="tile">
+        <div class="card">
+            <img src="images/IMG952177.jpg" alt="Photo 4" style="width:100%" />
+            <div class="container">
+                <h4><b>Porject #4</b></h4>
+                <p>A project.</p>
+            </div>
+        </div>
+    </div>
+    <div class="tile">
+        <div class="card">
+            <img src="images/IMG952177.jpg" alt="Photo 5" style="width:100%" />
+            <div class="container">
+                <h4><b>Porject #5</b></h4>
+                <p>A project.</p>
+            </div>
+        </div>
+    </div>
+    <div class="tile">
+        <div class="card">
+            <img src="images/IMG952177.jpg" alt="Photo 6" style="width:100%" />
+            <div class="container">
+                <h4><b>Porject #6</b></h4>
+                <p>A project.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private async Task CopyEmail()
+    {
+        await JSRuntime.InvokeVoidAsync("clipboardCopy.copyEmail", "horvath.j17@gmail.com");
+    }
+}
+

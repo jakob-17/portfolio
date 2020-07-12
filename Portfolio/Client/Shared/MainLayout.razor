@@ -1,0 +1,22 @@
+﻿@inherits LayoutComponentBase
+
+<style>
+    .top-row.px-4 {
+        background-color: #9e9e9e;
+    }
+</style>
+
+<div class="main">
+    <div class="top-row px-4">
+        <NavLink class="nav-link" href="">
+            Home
+        </NavLink>
+        <NavLink class="nav-link" href="about">
+            About
+        </NavLink>
+    </div>
+
+    <div class="content px-4">
+        @Body
+    </div>
+</div>
